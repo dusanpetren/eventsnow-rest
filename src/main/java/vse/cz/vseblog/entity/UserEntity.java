@@ -1,7 +1,6 @@
 package vse.cz.vseblog.entity;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -45,10 +44,6 @@ public class UserEntity {
 	@CreationTimestamp
 	private Timestamp createdAt;
 
-	@Column(name = "edited_at")
-	@UpdateTimestamp
-	private Timestamp editedAt;
-
 	@OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
 	private List<EventEntity> posts;
 
@@ -64,7 +59,6 @@ public class UserEntity {
 		this.lastname = userEntity.getLastname();
 		this.email = userEntity.getEmail();
 		this.createdAt = userEntity.getCreatedAt();
-		this.editedAt = userEntity.getEditedAt();
 		this.gender = userEntity.getGender();
 		this.type = userEntity.getType();
 		this.posts = userEntity.posts;
@@ -125,14 +119,6 @@ public class UserEntity {
 
 	public void setCreatedAt(java.sql.Timestamp createdAt) {
 		this.createdAt = createdAt;
-	}
-
-	public Timestamp getEditedAt() {
-		return editedAt;
-	}
-
-	public void setEditedAt(Timestamp editedAt) {
-		this.editedAt = editedAt;
 	}
 
 	public String getGender() {
