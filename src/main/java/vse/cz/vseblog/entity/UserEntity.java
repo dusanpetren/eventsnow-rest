@@ -1,6 +1,5 @@
 package vse.cz.vseblog.entity;
 
-import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -19,7 +18,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "OWNER")
 public class UserEntity {
 
 	@Id
