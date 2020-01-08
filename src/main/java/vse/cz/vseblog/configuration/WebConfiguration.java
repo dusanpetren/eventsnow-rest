@@ -16,7 +16,7 @@ public class WebConfiguration implements WebMvcConfigurer {
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**")
-				.allowedMethods("GET", "POST", "PUT", "DELETE").allowedOrigins("https://eventsnow-rest.herokuapp.com/");
+				.allowedMethods("GET", "POST", "PUT", "DELETE").allowedOrigins("https://eventsnow-rest.herokuapp.com/", "https://pure-sands-41229.herokuapp.com/");
 
 	}
 
