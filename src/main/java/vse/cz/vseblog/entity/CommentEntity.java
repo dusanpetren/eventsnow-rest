@@ -9,8 +9,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,10 +28,6 @@ public class CommentEntity {
 	private Long id;
 
 	private String content;
-
-	@Column(name = "status")
-	@Enumerated(EnumType.STRING)
-	private CommentStatus status = CommentStatus.NEW;
 
 	@Column(name = "created_at")
 	@CreationTimestamp
@@ -66,14 +60,6 @@ public class CommentEntity {
 
 	public void setContent(String content) {
 		this.content = content;
-	}
-
-	public CommentStatus getStatus() {
-		return status;
-	}
-
-	public void setStatus(CommentStatus status) {
-		this.status = status;
 	}
 
 	public Timestamp getCreatedAt() {
